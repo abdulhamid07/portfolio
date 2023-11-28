@@ -29,16 +29,20 @@ const AboutPage = () => {
         {
           title: "Frontend Development",
           icons: [
-            <FaJs />,
-            <FaReact />,
-            <SiNextdotjs />,
-            <SiTypescript />,
-            <TbBrandReactNative />,
+            <FaJs key={1} />,
+            <FaReact key={2} />,
+            <SiNextdotjs key={3} />,
+            <SiTypescript key={4} />,
+            <TbBrandReactNative key={5} />,
           ],
         },
         {
           title: "Backend Development",
-          icons: [<FaPhp />, <FaLaravel />, <SiCodeigniter />],
+          icons: [
+            <FaPhp key={1} />,
+            <FaLaravel key={2} />,
+            <SiCodeigniter key={3} />,
+          ],
         },
       ],
     },
@@ -195,8 +199,8 @@ const AboutPage = () => {
                   <div className="hidden md:flex">-</div>
                   <div className="">{item.stage}</div>
                   <div className="flex gap-x-4">
-                    {item.icons?.map((icon: any) => (
-                      <div key={icon} className="text-2xl text-white">
+                    {item.icons?.map((icon: any, itemIndex: number) => (
+                      <div key={itemIndex} className="text-2xl text-white">
                         {icon}
                       </div>
                     ))}
