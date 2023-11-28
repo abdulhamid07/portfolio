@@ -8,7 +8,7 @@ import {
 
 const Socials = () => {
   return (
-    <div className="flex items-center gap-x-5 text-lg">
+    <div className="flex items-center gap-x-5 text-lg z-30">
       <Link
         href={"https://www.instagram.com/abdulham.id"}
         target="_blank"
