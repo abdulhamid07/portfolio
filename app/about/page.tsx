@@ -1,10 +1,6 @@
 "use client";
 import { FaJs, FaLaravel, FaPhp, FaReact } from "react-icons/fa";
-import {
-  SiCodeigniter,
-  SiNextdotjs,
-  SiTypescript
-} from "react-icons/si";
+import { SiCodeigniter, SiNextdotjs, SiTypescript } from "react-icons/si";
 
 import Avatar from "@/components/avatar";
 import Circles from "@/components/circles";
@@ -199,8 +195,8 @@ const AboutPage = () => {
                   <div className="hidden md:flex">-</div>
                   <div className="">{item.stage}</div>
                   <div className="flex gap-x-4">
-                    {item.icons?.map((icon: any, itemIndex: number) => (
-                      <div key={itemIndex} className="text-2xl text-white">
+                    {item.icons?.map((icon: any) => (
+                      <div key={icon} className="text-2xl text-white">
                         {icon}
                       </div>
                     ))}
