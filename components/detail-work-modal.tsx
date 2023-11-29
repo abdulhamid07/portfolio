@@ -94,22 +94,22 @@ const DetailWorkModal = () => {
             <p className="text-sm">{work?.description}</p>
             <div className="flex-row space-x-4 py-8">
               {work?.repo !== "private" && (
-                <Button className="bg-white text-primary hover:bg-white/90">
+                <Button
+                  onClick={() => window.open(work?.repo!, "_blank")}
+                  className="bg-white text-primary hover:bg-white/90"
+                >
                   Repository
-                  <Github
-                    className="w-6 h-6 ml-2"
-                    onClick={() => window.open(work?.repo!, "_blank")}
-                  />
+                  <Github className="w-6 h-6 ml-2" />
                 </Button>
               )}
 
               {work?.publishUrl !== "internal" && (
-                <Button className="bg-white text-primary hover:bg-white/90">
+                <Button
+                  onClick={() => window.open(work?.publishUrl!, "_blank")}
+                  className="bg-white text-primary hover:bg-white/90"
+                >
                   Demo
-                  <Globe
-                    className="w-6 h-6 ml-2"
-                    onClick={() => window.open(work?.publishUrl!, "_blank")}
-                  />
+                  <Globe className="w-6 h-6 ml-2" />
                 </Button>
               )}
             </div>
