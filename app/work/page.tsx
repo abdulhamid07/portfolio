@@ -7,11 +7,10 @@ export type slideType = {
 type IMAGES = {
   images: WORK[];
 };
-type WORK = {
+export type WORK = {
   imageUrl: string;
   title: string;
   description: string;
-  stack: string;
   repo: string;
   publishUrl: string;
   tags: string;
@@ -29,10 +28,9 @@ const WorkPage = async () => {
           imageUrl: work[0],
           title: work[1],
           description: work[2],
-          stack: work[3],
-          repo: work[4],
-          publishUrl: work[5],
-          tags: work[6],
+          repo: work[3],
+          publishUrl: work[4],
+          tags: work[5],
         }));
 
       workSlides.slides.push({ images: slideImages });

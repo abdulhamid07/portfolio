@@ -3,6 +3,7 @@ import { Sora } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 import ToastProvider from "@/providers/toast-provider";
+import ModalProvider from "@/components/modal-provider";
 
 const sora = Sora({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={sora.className}>
         <ToastProvider />
+        <ModalProvider />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
