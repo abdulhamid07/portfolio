@@ -30,7 +30,12 @@ const ServicesPage = () => {
                 exit="hidden"
                 className="mb-4 max-w-[400px] mx-auto lg:mx-0 xl:text-justify text-center"
               >
-               Offering a range of professional services tailored to meet your needs. With a commitment to quality and client satisfaction, I aim to deliver impactful solutions that elevate your industry.
+                Offering a range of professional services tailored to meet your
+                needs.
+                <span className="hidden xl:flex">
+                  With a commitment to quality and client satisfaction, I aim to
+                  deliver impactful solutions that elevate your industry.
+                </span>
               </motion.p>
             </div>
 
