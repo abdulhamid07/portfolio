@@ -15,19 +15,16 @@ const validationSchema = Yup.object({
   email: Yup.string()
     .email("Invalid email address")
     .required("Email is required"),
-  subject: Yup.string().required("Subject is required"),
   message: Yup.string().required("Message is required"),
 });
 interface IFormValues {
   name: string;
   email: string;
-  subject: string;
   message: string;
 }
 const initialValues: IFormValues = {
   name: "",
   email: "",
-  subject: "",
   message: "",
 };
 const Contact = () => {
@@ -66,7 +63,7 @@ const Contact = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="h2 text-center mb-12"
+              className="h2 text-center xl:mb-12"
             >
               {"Let's"} <span className="text-accent">connect.</span>
             </motion.h2>
@@ -80,56 +77,37 @@ const Contact = () => {
               animate="show"
               exit="hidden"
             >
-              <div className="flex gap-x-6 w-full">
-                <div className="w-full space-y-1">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="name"
-                    className="input"
-                    disabled={loading}
-                    onChange={formik.handleChange}
-                    value={formik.values.name}
-                  />
-                  {formik.touched.name && formik.errors.name && (
-                    <div className="text-red-500 text-sm">
-                      {formik.errors.name}
-                    </div>
-                  )}
-                </div>
-                <div className="w-full space-y-1">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="email"
-                    className="input"
-                    disabled={loading}
-                    onChange={formik.handleChange}
-                    value={formik.values.email}
-                  />
-                  {formik.touched.email && formik.errors.email && (
-                    <div className="text-red-500 text-sm">
-                      {formik.errors.email}
-                    </div>
-                  )}
-                </div>
-              </div>
               <div className="w-full space-y-1">
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
-                  placeholder="subject"
+                  id="name"
+                  name="name"
+                  placeholder="name"
                   className="input"
                   disabled={loading}
                   onChange={formik.handleChange}
-                  value={formik.values.subject}
+                  value={formik.values.name}
                 />
-                {formik.touched.subject && formik.errors.subject && (
-                  <div className="text-red-500 text-sm">
-                    {formik.errors.subject}
+                {formik.touched.name && formik.errors.name && (
+                  <div className="text-red-500 text-sm text-left">
+                    {formik.errors.name}
+                  </div>
+                )}
+              </div>
+              <div className="w-full space-y-1">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="email"
+                  className="input"
+                  disabled={loading}
+                  onChange={formik.handleChange}
+                  value={formik.values.email}
+                />
+                {formik.touched.email && formik.errors.email && (
+                  <div className="text-red-500 text-sm text-left">
+                    {formik.errors.email}
                   </div>
                 )}
               </div>
@@ -144,7 +122,7 @@ const Contact = () => {
                   value={formik.values.message}
                 ></textarea>
                 {formik.touched.message && formik.errors.message && (
-                  <div className="text-red-500 text-sm">
+                  <div className="text-red-500 text-sm text-left">
                     {formik.errors.message}
                   </div>
                 )}
@@ -152,7 +130,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"
+                className="btn rounded-full border border-white/50 w-full px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"
               >
                 {loading ? (
                   <FaSpinner className="animate-spin text-[22px] text-white" />

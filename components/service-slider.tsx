@@ -28,12 +28,12 @@ const serviceData = [
   },
   {
     icon: <RxReader />,
-    title: "Thesis Program",
+    title: "Program Skripsi",
     description: "Create programs such as websites and mobile apps",
   },
   {
     icon: <RxPencil2 />,
-    title: "Thesis Manuscript",
+    title: "Naskah Skripsi",
     description: "Create a thesis, the format follows that of each client",
   },
 ];

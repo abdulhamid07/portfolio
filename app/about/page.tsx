@@ -79,7 +79,7 @@ const AboutPage = () => {
   ];
   return (
     <>
-      <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
+      <div className="h-full bg-primary/30 pt-32 pb-20 text-center xl:text-left">
         <Circles />
         <motion.div
           variants={fadeIn({ direction: "right", delay: 0.2 })}
@@ -107,13 +107,9 @@ const AboutPage = () => {
               initial="hidden"
               animate="show"
               exit="hidden"
-              className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 text-justify"
+              className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0 xl:text-justify text-center"
             >
-              A tech enthusiast who has studied the programming profession.
-              Started working on projects since 2017 which are website-based and
-              have mastered several stacks until now. Likes to explore
-              technology and dares to trial and error something that has not
-              been tried, especially programming languages.
+              A technology enthusiast who has started working on website-based projects since 2017. Likes to try new technology and dares to try something that has not been tried
             </motion.p>
 
             <motion.div
@@ -172,7 +168,7 @@ const AboutPage = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="flex flex-col w-full xl:max-w-[48%] h-[480px]"
+            className="flex flex-col w-full xl:max-w-[48%] xl:h-[300px] h-[480px] overflow-auto"
           >
             <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
               {aboutData.map((item, itemIndex) => (

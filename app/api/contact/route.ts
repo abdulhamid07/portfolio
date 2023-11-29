@@ -9,7 +9,7 @@ export async function POST(req: Request, res: NextApiResponse) {
   }
 
   const body = await req.json()
-  const { name, email, subject, message } = body;
+  const { name, email, message } = body;
 
   try {
     const auth = await googleAuth({ scopeType: "POST" });
@@ -24,7 +24,7 @@ export async function POST(req: Request, res: NextApiResponse) {
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
-          [name, email, subject, message],
+          [name, email, message],
         ]
       },
     });

@@ -8,7 +8,7 @@ import Bulb from "@/components/blub";
 const ServicesPage = () => {
   return (
     <>
-      <div className="h-full bg-primary/30 py-36 flex items-center">
+      <div className="h-full bg-primary/30 flex items-center">
         <Circles />
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row gap-x-8">
@@ -19,7 +19,7 @@ const ServicesPage = () => {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="h2 xl:mt-8"
+                className="h2 xl:mt-8 mt-20"
               >
                 My services <span className="text-accent">.</span>
               </motion.h2>
@@ -28,12 +28,9 @@ const ServicesPage = () => {
                 initial="hidden"
                 animate="show"
                 exit="hidden"
-                className="mb-4 max-w-[400px] mx-auto lg:mx-0 text-justify"
+                className="mb-4 max-w-[400px] mx-auto lg:mx-0 xl:text-justify text-center"
               >
-                Offering a range of professional services tailored to meet your
-                needs, my expertise encompasses web and mobile development. With
-                a commitment to quality and client satisfaction, I aim to
-                deliver impactful solutions that elevate your industry.
+               Offering a range of professional services tailored to meet your needs. With a commitment to quality and client satisfaction, I aim to deliver impactful solutions that elevate your industry.
               </motion.p>
             </div>
 
