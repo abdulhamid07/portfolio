@@ -19,17 +19,17 @@ const serviceData = [
   {
     icon: <RxDesktop />,
     title: "Web Development",
-    description: "Create website using PHP or Javacript framework",
+    description: "Create using PHP or Javacript framework",
   },
   {
     icon: <RxMobile />,
     title: "Mobile Development",
-    description: "Create android app using React Native and other framework",
+    description: "Create android app using React Native",
   },
   {
     icon: <RxReader />,
     title: "Program Skripsi",
-    description: "Create programs such as websites and mobile apps",
+    description: "Create program such as website and mobile app",
   },
   {
     icon: <RxPencil2 />,
