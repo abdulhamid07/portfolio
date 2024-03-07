@@ -54,7 +54,7 @@ const AboutPage = () => {
           stage: "( 2019 - Present )",
         },
         {
-          title: "Freelance Web Developer",
+          title: "Web Developer - Zada Kreatif Media",
           stage: "( 2017 - 2019 )",
         },
         {

@@ -7,9 +7,22 @@ import ProjectsBtn from "@/components/projects-btn";
 import { motion } from "framer-motion";
 
 import { fadeIn } from "../constants";
+import { BsArrowRight } from "react-icons/bs";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 export const revalidate = 0;
 const HomePage = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <div className="bg-primary/60 h-full">
       <div className="w-full h-full py-32 bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
@@ -29,10 +42,27 @@ const HomePage = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-justify text-center"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-justify text-center xl:items-start items-center flex flex-col"
           >
             Transforming lines of code into vibrant digital realities is where
             my passion and expertise converge
+            <br />
+            <Link
+              href={"/CV_Abdul_Hamid.pdf"}
+              download
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="sm"
+                className="z-20 mt-2 group relative rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 hover:bg-gradient-to-tl text-white border-0"
+              >
+                Download Resume
+                <div className="ml-1 text-xl translate-x-[800%] group-hover:translate-x-0 transition-all duration-300 delay-200">
+                  <BsArrowRight />
+                </div>
+              </Button>
+            </Link>
           </motion.p>
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
