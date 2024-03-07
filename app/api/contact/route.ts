@@ -1,11 +1,10 @@
 import { googleAuth } from "@/libs/google-auth";
 import { google } from "googleapis";
-import { NextApiResponse } from "next";
 import { NextResponse } from "next/server";
 
-export async function POST(req: Request, res: NextApiResponse) {
+export async function POST(req: Request) {
   if (req.method !== "POST") {
-    return res.status(405).send({ message: "Only POST allowed" });
+    return new NextResponse("Method not allowed", { status: 405 })
   }
 
   const body = await req.json()
@@ -18,7 +17,7 @@ export async function POST(req: Request, res: NextApiResponse) {
       version: "v4",
     });
 
-    const response = await sheets.spreadsheets.values.append({
+    await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEET_ID,
       range: "Contact",
       valueInputOption: "USER_ENTERED",
@@ -29,17 +28,10 @@ export async function POST(req: Request, res: NextApiResponse) {
       },
     });
 
-    return NextResponse.json({
-      data: response.data,
-    },
-      { status: 200 }
-    );
+    return NextResponse.json("Success", { status: 200 });
   } catch (e) {
     console.error(e);
-    return NextResponse.json(
-      { error: "Internal Server Error" },
-      { status: 500 }
-    );
+    return new NextResponse("Internal error", { status: 500 })
   }
 }
 
