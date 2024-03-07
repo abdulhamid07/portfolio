@@ -42,7 +42,7 @@ const HomePage = () => {
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 xl:text-justify text-center xl:items-start items-center flex flex-col"
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:text-justify text-center xl:items-start items-center flex flex-col"
           >
             Transforming lines of code into vibrant digital realities is where
             my passion and expertise converge
@@ -58,7 +58,7 @@ const HomePage = () => {
                 className="z-20 mt-2 group relative rounded-lg overflow-hidden flex items-center justify-center bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 hover:bg-gradient-to-tl text-white border-0"
               >
                 Download Resume
-                <div className="ml-1 text-xl translate-x-[800%] group-hover:translate-x-0 transition-all duration-300 delay-200">
+                <div className="xl:block hidden ml-1 text-xl translate-x-[800%] group-hover:translate-x-0 transition-all duration-300 delay-200">
                   <BsArrowRight />
                 </div>
               </Button>
@@ -77,10 +77,7 @@ const HomePage = () => {
             <ProjectsBtn />
           </motion.div>
         </div>
-        {/* <div className="w-[1200px] h-full absolute right-0 bottom-0">
-        </div> */}
         <div className="w-[1200px] h-full absolute right-0 bottom-0">
-          {/* <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0"></div> */}
           <ParticlesContainer />
           <motion.div
             variants={fadeIn({ direction: "down", delay: 0.5 })}
